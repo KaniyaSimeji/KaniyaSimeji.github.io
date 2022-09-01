@@ -8,7 +8,7 @@ export default function Header() {
 			<div className="max-w-4xl mx-auto flex justify-between items-center h-12">
 				<Link href="/">
 					<a>
-						<img src="/KaniyaSimeji.github.io/kanium.png" alt="logo" width={50} height={50} />
+						<img src="/kanium.png" alt="logo" width={50} height={50} />
 					</a>
 				</Link>
 				<h3 className="w-11/12">kanium.me</h3>

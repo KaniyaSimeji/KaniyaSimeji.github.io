@@ -3,8 +3,8 @@ const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-	basePath: "/KaniyaSimeji.github.io",
-	assetPrefix: "/KaniyaSimeji.github.io",
+	//basePath: "/",
+	//assetPrefix: "/",
 	trailingSlash: true,
 	images: {
 		unoptimized: true,
