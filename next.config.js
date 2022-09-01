@@ -3,6 +3,8 @@ const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+	basePath: process.env.GITHUB_ACTIONS && "/KaniyaSimeji.github.io",
+	trailingSlash: true,
 }
 
 const withMDX = require("@next/mdx")({
