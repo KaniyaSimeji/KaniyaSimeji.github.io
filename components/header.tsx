@@ -1,8 +1,6 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Menu, Transition } from "@headlessui/react"
 import { Fragment } from "react"
-import KaniumIcon from "../public/kanium.png"
 
 export default function Header() {
 	return (
@@ -10,7 +8,7 @@ export default function Header() {
 			<div className="max-w-4xl mx-auto flex justify-between items-center h-12">
 				<Link href="/">
 					<a>
-						<Image src={KaniumIcon} alt="logo" width={50} height={50} />
+						<img src="/KaniyaSimeji.github.io/kanium.png" alt="logo" width={50} height={50} />
 					</a>
 				</Link>
 				<h3 className="w-11/12">kanium.me</h3>

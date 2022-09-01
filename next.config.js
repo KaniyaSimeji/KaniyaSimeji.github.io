@@ -6,6 +6,9 @@ const nextConfig = {
 	basePath: "/KaniyaSimeji.github.io",
 	assetPrefix: "/KaniyaSimeji.github.io",
 	trailingSlash: true,
+	images: {
+		unoptimized: true,
+	},
 }
 
 const withMDX = require("@next/mdx")({
