@@ -3,11 +3,14 @@ const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-	//basePath: "/",
-	//assetPrefix: "/",
 	trailingSlash: true,
 	images: {
-		unoptimized: true,
+		//unoptimized: true,
+	},
+	webpack: (config) => {
+		config.resolve.fallback = { fs: false };
+
+		return config;
 	},
 }
 
