@@ -6,6 +6,7 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     disableStaticImages: true,
+	unoptimized: true
   },
   webpack: (config, ctx) => {
     if (!ctx.isServer) {
