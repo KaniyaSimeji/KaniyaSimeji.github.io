@@ -1,6 +1,5 @@
 import Header from './header';
 import Footer from './footer';
-import type { AppProps } from 'next/app'
 import { ReactNode } from 'react';
 
 type props = {

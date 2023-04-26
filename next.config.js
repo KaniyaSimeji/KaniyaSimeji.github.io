@@ -1,23 +1,27 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: true,
-	swcMinify: true,
-	pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-	//basePath: "/",
-	//assetPrefix: "/",
-	trailingSlash: true,
-	images: {
-		unoptimized: true,
-	},
-}
+  reactStrictMode: true,
+  swcMinify: true,
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  trailingSlash: true,
+  images: {
+    disableStaticImages: true,
+  },
+  webpack: (config, ctx) => {
+    if (!ctx.isServer) {
+      config.resolve.fallback.fs = false;
+    }
+    return config;
+  },
+};
 
 const withMDX = require("@next/mdx")({
-	extension: /\.(md|mdx)$/,
-	options: {
-		remarkPlugins: [],
-		rehypePlugins: [],
-		providerImportSource: "@mdx-js/react"
-	},
-})
+  extension: /\.(md|mdx)$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+    providerImportSource: "@mdx-js/react",
+  },
+});
 
-module.exports = withMDX(nextConfig)
+module.exports = withMDX(nextConfig);
