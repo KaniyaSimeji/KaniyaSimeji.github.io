@@ -21,7 +21,7 @@ function Home() {
           className="object-down object-top rounded-md"
         ></Image>
         <p className="text-1xl font-bold">
-          アイコンはとある絵師さんにかいていただきました。ありがとう!
+          アイコンはとある絵師さんにかいていただきました。ありがとうございます!
         </p>
       </div>
       <div className="my-8 space-y-3">

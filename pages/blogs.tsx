@@ -1,8 +1,11 @@
 import { InferGetStaticPropsType } from "next";
 import { getContentsFilesInDirectory } from "./api/blogs";
 import Link from "next/link";
+import { BsRssFill } from "react-icons/bs";
+import genFeed from "./lib/gen_feed";
 
 export async function getStaticProps() {
+  genFeed();
   const contents = getContentsFilesInDirectory();
 
   const ContentMeta = contents.map((con) => {
@@ -38,6 +41,10 @@ export default function Blogs({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div>
+      <div className="justify-items-center grid">
+        <h1 className="m-8 text-3xl">記事一覧</h1>
+        <Link href={"/rss/atom.xml"}><BsRssFill className="inline m-1" /><p className="inline m-1">RSS</p></Link>
+      </div>
       <ul>
         {ContentMeta.map((con) => (
           <li key={con.id}>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://kanium.me/</id>
+    <title>kanium website</title>
+    <updated>2023-05-14T09:45:28.750Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>KaniyaSimeji</name>
+    </author>
+    <link rel="alternate" href="https://kanium.me/"/>
+    <link rel="self" href="https://kanium.me/rss/atom.xml"/>
+    <subtitle>KaniyaSimeji WebSite</subtitle>
+    <rights>All rights reserved 2023, KaniyaSimeji</rights>
+    <entry>
+        <title type="html"><![CDATA[Hello World]]></title>
+        <id>https://kanium.me/first-post</id>
+        <link href="https://kanium.me/first-post"/>
+        <updated>2023-05-14T02:17:51.948Z</updated>
+        <summary type="html"><![CDATA[Test artict]]></summary>
+        <content type="html"><![CDATA[
+# Hello
+
+ブログなんもわからない
+]]></content>
+    </entry>
+</feed>

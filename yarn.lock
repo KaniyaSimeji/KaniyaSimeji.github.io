@@ -3897,6 +3897,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"feed@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "feed@npm:4.2.2"
+  dependencies:
+    xml-js: "npm:^1.6.11"
+  checksum: e1939d64f79043d9dd62d8e37deab17dec6afbdfd7fcada5840c37628be986f56d2fc3c6215f2cb014fb8be8f6e76e84d14fefc172685fe423797830f2876311
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^6.0.1":
   version: 6.0.1
   resolution: "file-entry-cache@npm:6.0.1"
@@ -5735,6 +5744,7 @@ __metadata:
     babel-plugin-superjson-next: "npm:^0.4.5"
     eslint: "npm:8.36.0"
     eslint-config-next: "npm:^13.2.4"
+    feed: "npm:^4.2.2"
     gray-matter: "npm:^4.0.3"
     next: "npm:^13.2.4"
     next-themes: "npm:^0.2.1"
@@ -6691,6 +6701,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sax@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "sax@npm:1.2.4"
+  checksum: 2917c3ef3cab1307aa14036705b599c7fd1b51756189e67bd1f23193cdc5ceac9bd59104830542cfb6326febfd1dce73acc08fecfa615c4c920c94a9a6ccbda4
+  languageName: node
+  linkType: hard
+
 "scheduler@npm:^0.23.0":
   version: 0.23.0
   resolution: "scheduler@npm:0.23.0"
@@ -7508,6 +7525,17 @@ __metadata:
   version: 1.0.2
   resolution: "wrappy@npm:1.0.2"
   checksum: 37d243a577dfeee20586eae1e3208dfb4e4cea1211a2a4116a19b50d91e619ff3dbc5ec934e28ca9baaa11a65df826c8d65c5fd1bb81f0ce0dadb469d47061c2
+  languageName: node
+  linkType: hard
+
+"xml-js@npm:^1.6.11":
+  version: 1.6.11
+  resolution: "xml-js@npm:1.6.11"
+  dependencies:
+    sax: "npm:^1.2.4"
+  bin:
+    xml-js: ./bin/cli.js
+  checksum: 408f82f75a8b7c2e5433b76cbe580e9db974265b1a314c44b4e13b07c60bef0b9370ca73bb7d722e0e48285d36fa3521e682f13d01948bbce884b041341fab0d
   languageName: node
   linkType: hard
 
