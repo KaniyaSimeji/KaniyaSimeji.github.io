@@ -2,11 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  pageExtensions: ["ts", "tsx", "js", "jsx"],
   trailingSlash: true,
   images: {
     disableStaticImages: true,
-	unoptimized: true
+    unoptimized: true,
   },
   webpack: (config, ctx) => {
     if (!ctx.isServer) {
@@ -16,13 +16,4 @@ const nextConfig = {
   },
 };
 
-const withMDX = require("@next/mdx")({
-  extension: /\.(md|mdx)$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-    providerImportSource: "@mdx-js/react",
-  },
-});
-
-module.exports = withMDX(nextConfig);
+module.exports = nextConfig;
