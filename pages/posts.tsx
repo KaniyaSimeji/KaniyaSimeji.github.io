@@ -60,7 +60,7 @@ export default function Blogs({
           <li key={con.id}>
             <div className="m-8 shadow-xl dark:shadow-black hover:ring-white hover:ring-2 rounded-md">
               <Link
-                href={"blog/" + con.path}
+                href={"post/" + con.path}
                 className="flex flex-nowrap items-center"
               >
                 <h2 className="text-3xl text-left">{con.name}</h2>

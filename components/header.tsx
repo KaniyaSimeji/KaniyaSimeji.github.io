@@ -20,7 +20,7 @@ export default function Header() {
           <Link href="/about">
             <h4 className="">about</h4>
           </Link>
-          <Link href="/blogs">
+          <Link href="/posts">
             <h4>blog</h4>
           </Link>
           <CgDarkMode
