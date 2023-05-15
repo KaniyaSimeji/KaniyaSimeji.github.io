@@ -3,6 +3,7 @@ import { getContentsFilesInDirectory } from "./api/blogs";
 import Link from "next/link";
 import { BsRssFill } from "react-icons/bs";
 import genFeed from "./lib/gen_feed";
+import Head from "next/head";
 
 export async function getStaticProps() {
   genFeed();
@@ -41,9 +42,18 @@ export default function Blogs({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div>
+      <Head>
+        <title>kanium blog</title>
+        <meta name="description" content="kanium website" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </Head>
       <div className="justify-items-center grid">
         <h1 className="m-8 text-3xl">記事一覧</h1>
-        <Link href={"/rss/atom.xml"}><BsRssFill className="inline m-1" /><p className="inline m-1">RSS</p></Link>
+        <Link href={"/rss/atom.xml"}>
+          <BsRssFill className="inline m-1" />
+          <p className="inline m-1">RSS</p>
+        </Link>
       </div>
       <ul>
         {ContentMeta.map((con) => (

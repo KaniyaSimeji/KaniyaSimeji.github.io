@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kanium.me/</id>
     <title>kanium website</title>
-    <updated>2023-05-14T09:45:28.750Z</updated>
+    <updated>2023-05-15T13:22:41.541Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <author>
         <name>KaniyaSimeji</name>
@@ -15,12 +15,18 @@
         <title type="html"><![CDATA[Hello World]]></title>
         <id>https://kanium.me/first-post</id>
         <link href="https://kanium.me/first-post"/>
-        <updated>2023-05-14T02:17:51.948Z</updated>
+        <updated>2023-05-14T11:25:04.980Z</updated>
         <summary type="html"><![CDATA[Test artict]]></summary>
         <content type="html"><![CDATA[
 # Hello
 
 ブログなんもわからない
+
+```js
+console.log("hello")
+```
+
+## Second
 ]]></content>
     </entry>
 </feed>

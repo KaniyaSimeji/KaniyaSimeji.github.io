@@ -2,9 +2,16 @@ import { readFileSync, readdirSync, statSync } from "fs";
 import matter, { GrayMatterFile } from "gray-matter";
 import path from "path";
 import { remark } from "remark";
-import remarkHtml from "remark-html";
+import remarkGemoji from "remark-gemoji";
+import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import toc from "@jsdevtools/rehype-toc";
 
-const postsDirectory = path.join(process.cwd(), "/pages/blog");
+const postsDirectory = path.join(process.cwd(), "/pages/post");
 const md_file_extension = ".md";
 const mdx_file_extension = ".mdx";
 
@@ -61,6 +68,19 @@ export type Content = {
 };
 
 export async function markdownToHTML(raw_text: string): Promise<string> {
-  const text = await remark().use(remarkHtml).process(raw_text);
+  const text = await remark()
+    .use(remarkGfm)
+    .use(remarkGemoji)
+    .use(remarkRehype)
+    .use(rehypePrettyCode, {
+      theme: "one-dark-pro",
+      keepBackground: true,
+    })
+    .data("settings", { fragment: true })
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings)
+    .use(toc)
+    .use(rehypeStringify)
+    .process(raw_text);
   return text.toString();
 }

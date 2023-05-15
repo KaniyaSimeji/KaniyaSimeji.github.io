@@ -40,14 +40,17 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default function Blog({
+export default function Post({
   text,
   name,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="">
       <Head>
-        <title>{name}</title>
+        <title>{name} | kanium blog</title>
+        <meta name="description" content="kanium website" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <div
         dangerouslySetInnerHTML={{ __html: text }}
