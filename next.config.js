@@ -8,6 +8,9 @@ const nextConfig = {
     disableStaticImages: true,
     unoptimized: true,
   },
+  experimental: {
+    swcPlugins: [["next-superjson-plugin", {}]],
+  },
   webpack: (config, ctx) => {
     if (!ctx.isServer) {
       config.resolve.fallback.fs = false;
