@@ -8,7 +8,7 @@ description: Test artict
 ブログなんもわからない
 
 ```js
-console.log("hello")
+console.log("hello");
 ```
 
 ## Second

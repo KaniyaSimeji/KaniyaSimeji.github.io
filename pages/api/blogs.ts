@@ -78,7 +78,13 @@ export async function markdownToHTML(raw_text: string): Promise<string> {
     })
     .data("settings", { fragment: true })
     .use(rehypeSlug)
-    .use(rehypeAutolinkHeadings)
+    .use(rehypeAutolinkHeadings, {
+      content: {
+        type: "element",
+        tagName: "i",
+        children: [{type: "text", value: "🔗"}],
+      },
+    })
     .use(toc)
     .use(rehypeStringify)
     .process(raw_text);

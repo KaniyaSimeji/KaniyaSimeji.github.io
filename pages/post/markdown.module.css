@@ -3,22 +3,41 @@ From https://github.com/vercel/next.js/blob/deprecated-main/examples/blog-starte
 */
 
 .markdown {
-  @apply text-lg leading-relaxed prose prose-p:text-zinc-300 dark:prose-invert inline-block;
+  @apply text-lg leading-relaxed inline-block;
+}
+
+.markdown a {
+  @apply flex-auto;
+}
+
+.markdown nav {
+	@apply border-zinc-50 border rounded shadow-md;
+}
+
+.markdown ol {
+	@apply list-none list-inside my-2 indent-px text-left;
+}
+
+.markdown i {
+	@apply text-sm ml-1 invisible hover:visible;
+}
+
+.markdown pre {
+	@apply p-1.5 rounded;
 }
 
 .markdown p,
 .markdown ul,
-.markdown ol,
 .markdown blockquote {
   @apply my-6;
 }
 
 .markdown h1 {
-  @apply text-4xl mt-12 mb-4 leading-snug text-blue-600;
+  @apply text-4xl mt-12 mb-4 leading-snug text-blue-600 font-bold;
 }
 
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug text-blue-600;
+  @apply text-3xl mt-12 mb-4 leading-snug text-blue-600 font-bold;
 }
 
 .markdown h3 {
