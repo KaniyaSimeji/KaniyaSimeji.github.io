@@ -11,10 +11,6 @@ const nextConfig = {
   experimental: {
     swcPlugins: [["next-superjson-plugin", {}]],
   },
-  i18n: {
-    locales: ["ja"],
-    defaultLocale: "ja",
-  },
   webpack: (config, ctx) => {
     if (!ctx.isServer) {
       config.resolve.fallback.fs = false;
