@@ -5973,7 +5973,7 @@ __metadata:
     feed: "npm:^4.2.2"
     gray-matter: "npm:^4.0.3"
     next: "npm:13.4.3"
-    next-superjson-plugin: "npm:^0.5.7"
+    next-superjson-plugin: "npm:0.5.8"
     next-themes: "npm:^0.2.1"
     postcss: "npm:^8.4.23"
     react: "npm:^18.2.0"
@@ -6037,15 +6037,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-superjson-plugin@npm:^0.5.7":
-  version: 0.5.7
-  resolution: "next-superjson-plugin@npm:0.5.7"
+"next-superjson-plugin@npm:0.5.8":
+  version: 0.5.8
+  resolution: "next-superjson-plugin@npm:0.5.8"
   dependencies:
     hoist-non-react-statics: "npm:^3.3.2"
   peerDependencies:
     next: ^13
     superjson: ^1
-  checksum: e322cee4103e0cc33dd08d1347bd723920f66681f8f846113a8cc066bffebf37d9f6d7fdee8cf0caaab72381f0b6a8b63f00c19c3f990236d1441a30d38efe11
+  checksum: 4fd9ece37c153dd632ec292aa8e9f155249e4b76bdb371e420682320176caf97dc0fea15e50f53de0c7f32c5fa06e1750b72afae62461c56eaffb24946d2bf43
   languageName: node
   linkType: hard
 
