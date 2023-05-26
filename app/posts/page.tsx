@@ -1,12 +1,11 @@
 import { InferGetStaticPropsType } from "next";
-import { getContentsFilesInDirectory } from "./api/blogs";
+import { getContentsFilesInDirectory } from "../../lib/blogs";
 import Link from "next/link";
 import { BsRssFill } from "react-icons/bs";
-import genFeed from "./lib/gen_feed";
+import genFeed from "../../lib/gen_feed";
 import Head from "next/head";
 
-export async function getStaticProps() {
-  genFeed();
+async function getContentsMeta() {
   const contents = getContentsFilesInDirectory();
 
   const ContentMeta = contents.map((con) => {
@@ -21,11 +20,7 @@ export async function getStaticProps() {
     return lite;
   });
 
-  return {
-    props: {
-      ContentMeta,
-    },
-  };
+  return ContentMeta;
 }
 
 type contentLite = {
@@ -37,9 +32,9 @@ type contentLite = {
   last_change: Date;
 };
 
-export default function Blogs({
-  ContentMeta,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default async function Blogs() {
+  genFeed();
+  const ContentMeta = await getContentsMeta();
   return (
     <div>
       <Head>

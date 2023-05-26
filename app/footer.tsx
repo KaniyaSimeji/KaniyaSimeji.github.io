@@ -1,3 +1,5 @@
+"use client";
+
 export default function Footer() {
   return (
     <footer className="border-x-green-50">

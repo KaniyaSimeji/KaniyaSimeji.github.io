@@ -1,5 +1,5 @@
 import { Feed } from "feed";
-import { getContentsFilesInDirectory } from "../api/blogs";
+import { getContentsFilesInDirectory } from "./blogs";
 import fs from "fs";
 import path from "path";
 
@@ -11,8 +11,6 @@ export default function genFeed() {
     link: "https://kanium.me/",
     copyright: "All rights reserved 2023, KaniyaSimeji",
     feedLinks: {
-      rss2: `https://kanium.me/rss/feed.xml`,
-      json: `https://kanium.me/rss/feed.json`,
       atom: `https://kanium.me/rss/atom.xml`,
     },
     author: {

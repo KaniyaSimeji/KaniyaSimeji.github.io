@@ -11,7 +11,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import toc from "@jsdevtools/rehype-toc";
 
-const postsDirectory = path.join(process.cwd(), "/pages/post");
+const postsDirectory = path.join(process.cwd(), "/posts");
 const md_file_extension = ".md";
 const mdx_file_extension = ".mdx";
 
@@ -82,7 +82,7 @@ export async function markdownToHTML(raw_text: string): Promise<string> {
       content: {
         type: "element",
         tagName: "i",
-        children: [{type: "text", value: "🔗"}],
+        children: [{ type: "text", value: "🔗" }],
       },
     })
     .use(toc)

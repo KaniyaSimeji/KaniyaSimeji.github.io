@@ -3,18 +3,18 @@ import {
   getContentByPath,
   getContentsFilesInDirectory,
   markdownToHTML,
-} from "../api/blogs";
+} from "../../../lib/blogs";
 import markdownStyles from "./markdown.module.css";
 import Head from "next/head";
 
+export const dynamicParams = true;
+
 type Params = {
-  params: {
-    slug: string;
-  };
+  slug: string;
 };
 
-export const getStaticProps = async ({ params }: Params) => {
-  const content = getContentByPath(params.slug);
+async function getContent({ slug }: Params) {
+  const content = getContentByPath(slug);
   const blog_text = await markdownToHTML(content.text);
 
   return {
@@ -23,27 +23,13 @@ export const getStaticProps = async ({ params }: Params) => {
       text: blog_text,
     },
   };
-};
+}
 
-export const getStaticPaths = async () => {
-  const contents = getContentsFilesInDirectory();
+export default async function Post({ params }) {
+  const {
+    props: { name, text },
+  } = await getContent(params);
 
-  return {
-    paths: contents.map((con) => {
-      return {
-        params: {
-          slug: con.path,
-        },
-      };
-    }),
-    fallback: "blocking",
-  };
-};
-
-export default function Post({
-  text,
-  name,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="">
       <Head>

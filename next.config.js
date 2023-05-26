@@ -10,6 +10,7 @@ const nextConfig = {
   },
   experimental: {
     swcPlugins: [["next-superjson-plugin", {}]],
+    swcFileReading: false,
   },
   webpack: (config, ctx) => {
     if (!ctx.isServer) {
