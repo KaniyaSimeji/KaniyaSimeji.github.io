@@ -1,4 +1,4 @@
-import { InferGetStaticPropsType } from "next/types";
+import { InferGetStaticPropsType, Metadata } from "next/types";
 import {
   getContentByPath,
   getContentsFilesInDirectory,
@@ -9,12 +9,16 @@ import Head from "next/head";
 
 export const dynamicParams = true;
 
-type Params = {
-  slug: string;
+// post/[slug]?[k]=[v]
+//[slug]: params: { slug:string }
+//[k] = [v]: searchParams: { k:v }
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
 
-async function getContent({ slug }: Params) {
-  const content = getContentByPath(slug);
+async function getContent({ params }: Props) {
+  const content = getContentByPath(params.slug);
   const blog_text = await markdownToHTML(content.text);
 
   return {
@@ -25,19 +29,25 @@ async function getContent({ slug }: Params) {
   };
 }
 
-export default async function Post({ params }) {
+export async function generateMetadata(params: Props): Promise<Metadata> {
+  const {
+    props: { name, description },
+  } = await getContent(params);
+  return {
+    title: `${name} | kanium blog`,
+    description,
+    icons: "/favicon.ico",
+    manifest: "/site.webmanifest",
+  };
+}
+
+export default async function Post(params: Props) {
   const {
     props: { name, text },
   } = await getContent(params);
 
   return (
     <div className="">
-      <Head>
-        <title>{`${name} | kanium blog`}</title>
-        <meta name="description" content="kanium website" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="manifest" href="/site.webmanifest" />
-      </Head>
       <h1 className="m-8 text-3xl font-bold">{name}</h1>
       <article
         dangerouslySetInnerHTML={{ __html: text }}

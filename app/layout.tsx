@@ -2,6 +2,14 @@ import Footer from "./footer";
 import Header from "./header";
 import { Providers } from "./providers";
 import "../styles/globals.css";
+import { Metadata } from "next/types";
+
+export const metadata: Metadata = {
+  title: "kanium blog",
+  description: "kanium website",
+  icons: "/favicon.ico",
+  manifest: "/site.webmanifest",
+};
 
 export default function RootLayout({
   // Layouts must accept a children prop.

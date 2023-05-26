@@ -1,9 +1,8 @@
-import { InferGetStaticPropsType } from "next";
+import { Metadata } from "next";
 import { getContentsFilesInDirectory } from "../../lib/blogs";
 import Link from "next/link";
 import { BsRssFill } from "react-icons/bs";
 import genFeed from "../../lib/gen_feed";
-import Head from "next/head";
 
 async function getContentsMeta() {
   const contents = getContentsFilesInDirectory();
@@ -32,17 +31,18 @@ type contentLite = {
   last_change: Date;
 };
 
+export const metadata: Metadata = {
+  title: "kanium blog",
+  description: "kanium website",
+  icons: "/favicon.ico",
+  manifest: "/site.webmanifest",
+};
+
 export default async function Blogs() {
   genFeed();
   const ContentMeta = await getContentsMeta();
   return (
     <div>
-      <Head>
-        <title>kanium blog</title>
-        <meta name="description" content="kanium website" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="manifest" href="/site.webmanifest" />
-      </Head>
       <div className="justify-items-center grid">
         <h1 className="m-8 text-3xl">記事一覧</h1>
         <Link href={"/rss/atom.xml"}>

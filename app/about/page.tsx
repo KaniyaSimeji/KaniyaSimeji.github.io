@@ -2,13 +2,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { BsTwitter, BsGithub, BsSpotify } from "react-icons/bs";
 
-export const metadata: Metadata = {
-  title: "kanium blog",
-  description: "kanium website",
-  icons: "/favicon.ico",
-  manifest: "/site.webmanifest",
-};
-
 function Home() {
   return (
     <div className="space-y-8">
@@ -28,7 +21,7 @@ function Home() {
       <div className="my-8 space-y-3">
         <h2 className="text-2xl">自己紹介</h2>
         <h3>名前: かにやしめじ / kanium</h3>
-        <h3 title="sf">ステータス: 学生</h3>
+        <h3>ステータス: 学生</h3>
         <h3>生息地: 主に横浜</h3>
         <h3>興味: [WebAssembly, プラグインシステム, 非同期処理, Web]</h3>
       </div>
