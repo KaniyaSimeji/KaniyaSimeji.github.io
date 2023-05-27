@@ -69,14 +69,10 @@ export type Content = {
 
 export async function markdownToHTML(raw_text: string): Promise<string> {
   const text = await remark()
-    .use(remarkGfm)
-    .use(remarkGemoji)
-    .use(remarkRehype)
-    .use(rehypePrettyCode, {
-      theme: "one-dark-pro",
-      keepBackground: true,
-    })
     .data("settings", { fragment: true })
+    .use(remarkGemoji)
+    .use(remarkGfm)
+    .use(remarkRehype)
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, {
       content: {
@@ -86,6 +82,11 @@ export async function markdownToHTML(raw_text: string): Promise<string> {
       },
     })
     .use(toc)
+    .use(rehypePrettyCode, {
+      theme: "one-dark-pro",
+      keepBackground: true,
+    })
+    //@ts-ignore
     .use(rehypeStringify)
     .process(raw_text);
   return text.toString();

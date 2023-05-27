@@ -1607,6 +1607,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@corex/deepmerge@npm:^4.0.43":
+  version: 4.0.43
+  resolution: "@corex/deepmerge@npm:4.0.43"
+  checksum: 4503b00cc824815aa8498b22f81ca54c1ad5d0651f475add40155198877e6a6910576d916d4ede7b586f2952f6ca9326725c9db56bc48c68d86aa20f33472dde
+  languageName: node
+  linkType: hard
+
 "@eslint-community/eslint-utils@npm:^4.2.0":
   version: 4.4.0
   resolution: "@eslint-community/eslint-utils@npm:4.4.0"
@@ -5828,6 +5835,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimist@npm:^1.2.8":
+  version: 1.2.8
+  resolution: "minimist@npm:1.2.8"
+  checksum: 8598f846f2b7546b22b01ce486df27da216a302367afe17f2a032da12fcb8d33bfbf2c523051230864abf0b806748bd60d4cd0863fae35fe104da1ff6194a185
+  languageName: node
+  linkType: hard
+
 "minipass-collect@npm:^1.0.2":
   version: 1.0.2
   resolution: "minipass-collect@npm:1.0.2"
@@ -5955,6 +5969,7 @@ __metadata:
     feed: "npm:^4.2.2"
     gray-matter: "npm:^4.0.3"
     next: "npm:13.4.3"
+    next-sitemap: "npm:^4.1.3"
     next-superjson-plugin: "npm:0.5.8"
     next-themes: "npm:^0.2.1"
     postcss: "npm:^8.4.23"
@@ -6016,6 +6031,23 @@ __metadata:
   version: 0.6.3
   resolution: "negotiator@npm:0.6.3"
   checksum: d8e3b42d99638b1f363ce114c98e6906ade395c230058e50644417bd398b01381133dbca4bc49f30f6b1c93254e4b5a2d50cc47adcdabf2a8476b6f16311ad5d
+  languageName: node
+  linkType: hard
+
+"next-sitemap@npm:^4.1.3":
+  version: 4.1.3
+  resolution: "next-sitemap@npm:4.1.3"
+  dependencies:
+    "@corex/deepmerge": "npm:^4.0.43"
+    fast-glob: "npm:^3.2.12"
+    minimist: "npm:^1.2.8"
+  peerDependencies:
+    "@next/env": "*"
+    next: "*"
+  bin:
+    next-sitemap: bin/next-sitemap.mjs
+    next-sitemap-cjs: bin/next-sitemap.cjs
+  checksum: 3f29afbe3fa94f8bc96ef0f5b13461fc3b6237981594690735860cb3eeef8e687bf02d7a4df1c146d4a7d24cfd81b621a20011617a47c60fd59259b0892dab68
   languageName: node
   linkType: hard
 
