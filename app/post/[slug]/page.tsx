@@ -17,8 +17,8 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-async function getContent({ params }: Props) {
-  const content = getContentByPath(params.slug);
+async function getContent(slug: string) {
+  const content = getContentByPath(slug);
   const blog_text = await markdownToHTML(content.text);
 
   return {
@@ -32,7 +32,7 @@ async function getContent({ params }: Props) {
 export async function generateMetadata(params: Props): Promise<Metadata> {
   const {
     props: { name, description },
-  } = await getContent(params);
+  } = await getContent(params.params.slug);
   return {
     title: `${name} | kanium blog`,
     description,
@@ -43,17 +43,15 @@ export async function generateMetadata(params: Props): Promise<Metadata> {
 
 export async function generateStaticParams() {
   const contents = getContentsFilesInDirectory();
-  return contents.map((v) => {
-    {
-      slug: v.path;
-    }
-  });
+  return contents.map((v) => ({
+    slug: v.path,
+  }));
 }
 
-export default async function Post(params: Props) {
+export default async function Post({ params }: Props) {
   const {
     props: { name, text },
-  } = await getContent(params);
+  } = await getContent(params.slug);
 
   return (
     <div className="">

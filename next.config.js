@@ -3,7 +3,7 @@ const nextConfig = {
   output: "export",
   reactStrictMode: true,
   swcMinify: true,
-  pageExtensions: ["ts", "tsx", "js", "jsx"],
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md"],
   trailingSlash: true,
   images: {
     disableStaticImages: true,
