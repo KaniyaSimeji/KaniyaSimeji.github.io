@@ -41,6 +41,15 @@ export async function generateMetadata(params: Props): Promise<Metadata> {
   };
 }
 
+export async function generateStaticParams() {
+  const contents = getContentsFilesInDirectory();
+  return contents.map((v) => {
+    {
+      slug: v.path;
+    }
+  });
+}
+
 export default async function Post(params: Props) {
   const {
     props: { name, text },
