@@ -45,10 +45,11 @@ export default async function Blogs() {
     <div>
       <div className="justify-items-center grid">
         <h1 className="m-8 text-3xl">記事一覧</h1>
-        <Link href={"/rss/atom.xml"}>
+        {/*not insert Link tag */}
+        <a href={"/rss/atom.xml"}>
           <BsRssFill className="inline m-1" />
           <p className="inline m-1">RSS</p>
-        </Link>
+        </a>
       </div>
       <ul>
         {ContentMeta.map((con) => (
